@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Parcial Laboratorio 3</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
+    <script src="./logica.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Segundo Parcial - Alumno: Garcia Juan Manuel</h1>
+    <div class="formulario" id="formularioDatos" hidden>
+        <h2>Formulario Lista</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th >ID</th>
+                    <th >Modelo</th>
+                    <th >AñoFab</th>
+                    <th >VelMax</th>
+                    <th >Autonomia</th>
+                    <th >AltMax</th>
+                    <th >CantPue</th>
+                    <th >CantRue</th>
+                    <th >Modificar</th>
+                    <th >Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="formularioDatos-tabla">
+            </tbody>
+        </table>
+        <div id="botonAgregar">
+            <button onclick="IniciarAbmAgregar()">Agregar</button>
+        </div>
+    </div>
+
+    <div class="formulario" id="formularioABM" hidden>
+        <h2>Formulario ABM</h2>
+        <h3 id="formularioABM-encabezado"></h3>
+        <div>
+            <label for="" class="labelABM">ID: </label><input type="text" readonly id="formularioABM-id"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Modelo: </label><input type="text" id="formularioABM-modelo"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">AñoFab: </label><input type="text" id="formularioABM-anoFab"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">VelMax: </label><input type="text" id="formularioABM-velMax" class="inputABM">
+        </div>
+        <div>
+            <label class="labelABM">Tipo: </label>
+            <select id="formularioABM-tipoDeVehiculo" onchange="MostrarOpcionesAbmCorrectas()" class="inputABM">
+                <option value="Aereo" selected>Aereo</option>
+                <option value="Terrestre">Terrestre</option>
+            </select>
+        </div>
+        <div>
+            <label for="" class="labelABM">Autonomia: </label><input type="text" id="formularioABM-autonomia"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">AltMax: </label><input type="text" id="formularioABM-altMax"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">CantPue: </label><input type="text" id="formularioABM-cantPue"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">CantRue: </label><input type="text" id="formularioABM-cantRue"
+                class="inputABM">
+        </div>
+        <div id="botonesABM">
+            <button id="formularioABM-botonAlta" onclick="AltaVehiculo()">Alta</button>
+            <button id="formularioABM-botonModificar" onclick="ModificarVehiculo()">Modificar</button>
+            <button id="formularioABM-botonEliminar" onclick="EliminarVehiculo()">Eliminar</button>
+            <button onclick="MostrarFormDatos()">Cancelar</button>
+        </div>
+    </div>
+</body>
+
+</html>
