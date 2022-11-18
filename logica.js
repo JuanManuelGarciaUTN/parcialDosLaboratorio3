@@ -602,7 +602,6 @@ function AgregarVehiculoPeticionHttp(datosRecibidos)
 {
     CambiarEstadoSpinner();
     datosJson = JSON.stringify(datosRecibidos);
-    console.log(datosJson);
 
     xhttp = new XMLHttpRequest();
 
