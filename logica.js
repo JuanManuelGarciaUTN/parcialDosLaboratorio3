@@ -1,4 +1,5 @@
 //variables globales
+const urlPhp = 'http://localhost/vehiculoAereoTerrestre.php'; //URL para hacer las consultas
 var datos = []; //array que contiene todos los datos del ABM
 
 var formularioDatos; //elemento html formulario Datos
@@ -21,7 +22,7 @@ function OnLoadHandler(){
 //realiza una peticion GET al servidor para obtener un json con los datos de los vehiculos
 function CargarDatosDesdeServidor()
 {
-    let promesa = fetch('http://localhost/vehiculoAereoTerrestre.php', {
+    let promesa = fetch(urlPhp, {
         method: 'GET',
         mode: 'cors', 
         cache: 'no-cache', 
@@ -528,7 +529,7 @@ async function EliminarVehiculoPeticionHttp(idRecibida)
     CambiarEstadoSpinner();
     datosJson = JSON.stringify({id:idRecibida});
 
-    let respuesta = await fetch('http://localhost/vehiculoAereoTerrestre.php', {
+    let respuesta = await fetch(urlPhp, {
         method: 'DELETE',
         mode: 'cors', 
         cache: 'no-cache', 
@@ -565,7 +566,7 @@ async function ModificarVehiculoPeticionHttp(datosRecibidos)
     
     datosJson = JSON.stringify(datosRecibidos);
 
-    let respuesta = await fetch('http://localhost/vehiculoAereoTerrestre.php', {
+    let respuesta = await fetch(urlPhp, {
         method: 'POST',
         mode: 'cors', 
         cache: 'no-cache', 
@@ -625,7 +626,7 @@ function AgregarVehiculoPeticionHttp(datosRecibidos)
             }
         }
     };
-    xhttp.open("PUT", "http://localhost/vehiculoAereoTerrestre.php");
+    xhttp.open("PUT", urlPhp);
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send(datosJson);
 }
